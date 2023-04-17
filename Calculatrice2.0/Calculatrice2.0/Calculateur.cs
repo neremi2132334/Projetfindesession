@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace Calculatrice2._0
 {
-    internal class Calculateur
+    partial class Calculateur
     {
+
+        public double exposant(int x, int y)
+        {
+            double z;
+
+            z = Math.Pow(x, y);
+
+            return z;
+
+        }
+
+
+
+
     }
 }

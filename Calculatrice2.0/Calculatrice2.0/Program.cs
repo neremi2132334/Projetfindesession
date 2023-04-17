@@ -27,16 +27,16 @@ namespace Calculatrice2._0
                     "(E) Exposant" +
                     "(L) Logarithme");
                 string choix = Console.ReadLine();
-                if(choix == A)
+                //if(choix == A)
                 {
                     Console.WriteLine("FONCTION ADDITION");
                 }
 
 
 
-                total = calculatrice.Diviser(x, y);
+                total = calculatrice.exposant(x, y);
                 Console.WriteLine($"La Réponse de la divsion ente {x} et {y} est égale a {total}");
-                total = calculatrice.Multiplier(x, y);
+                //total = calculatrice.Multiplier(x, y);
                 Console.WriteLine($"La Réponse de la Multiplication ente {x} et {y} est égale a {total}");
             }
             catch (DivideByZeroException ex)
