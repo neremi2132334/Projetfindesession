@@ -9,14 +9,12 @@ namespace ElRestorantant
     class Client
     {
         string nom;
-        string prenom;
 
 
         //A CHANGER !!!!!!!!!!!!!!!!!!!!!
-        public Client (string nom, string prenom)
+        public Client()
         {
-            this.nom = nom;
-            this.prenom = prenom;
+            this.nom = FabriqueNom.FabriquerNom();
         }
     }
 }

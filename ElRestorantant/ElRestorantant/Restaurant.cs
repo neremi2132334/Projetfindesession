@@ -26,8 +26,15 @@ namespace ElRestorantant
         //Fonction qui donne les statistiques du restaurant
         public void RestoStats()
         {
-            Console.WriteLine($"Statistique de Votre Restaurant --> {Nom}");
+            Console.WriteLine($"Statistique de Votre Restaurant --> {Nom}\n" +
+                   $"Monnaie --> {Monnaie}\n" +
+                   $"Nombre de Vente --> {NbVente}\n"+
+                   $"Popularité --> {Popularité}\n");
+        }
 
+        public void Clientss()
+        {
+            Client clients = new Client();
         }
 
 

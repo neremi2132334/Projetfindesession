@@ -21,7 +21,7 @@ namespace ElRestorantant
             for (int i = 0; resto.Monnaie != 0 ; i++)
             {
                 Console.WriteLine($"--> Jour Numéro {i + 1}");
-                Console.WriteLine(">>>> Gestion du Restaurant <<<<");
+                Console.WriteLine(">>>> Gestion du Restaurant <<<<\n");
                 Console.WriteLine("1 --> Stats Du Restaurant\n"+
                     "2 --> Gestion des Clients\n" +
                     "3 --> Ajuster les plats\n" +
@@ -33,7 +33,8 @@ namespace ElRestorantant
                     Console.WriteLine("--> Tapez un chiffre pour faire une action (1,2,3 OU 4)");
                     chx = Convert.ToInt32(Console.ReadLine());
                 }
-                if (chx == 1) { resto.; }
+                if (chx == 1) { resto.RestoStats(); }
+                if (chx == 2) { resto.Clientss(); }
             }
         }
     }
