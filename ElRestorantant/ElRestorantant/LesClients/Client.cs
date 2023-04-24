@@ -6,15 +6,25 @@ using System.Threading.Tasks;
 
 namespace ElRestorantant
 {
+    public enum Humeur
+    {
+        Joyeux,
+        Rageux, 
+        Neutre,     
+    }
     class Client
     {
-        string nom;
+        public string Nom { get; set; }
+        public Humeur HumeurClient { get; set; }
 
-
-        //A CHANGER !!!!!!!!!!!!!!!!!!!!!
         public Client()
         {
-            this.nom = FabriqueNom.FabriquerNom();
+            Nom = FabriqueNom.FabriquerNom();
+
+            //Setting de l'humeur du client 
+            int nb = FabriqueNom.rand.Next(0, 3);
+            HumeurClient = (Humeur)nb;
         }
+
     }
 }

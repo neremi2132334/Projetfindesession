@@ -34,7 +34,7 @@ namespace ElRestorantant
                     chx = Convert.ToInt32(Console.ReadLine());
                 }
                 if (chx == 1) { resto.RestoStats(); }
-                if (chx == 2) { resto.Clientss(); }
+                if (chx == 2) { resto.ObtenirClient(); }
             }
         }
     }

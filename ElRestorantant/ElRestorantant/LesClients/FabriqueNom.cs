@@ -10,7 +10,7 @@ namespace ElRestorantant
     {
         static List<string> listNom = new List<string>();
         static List<string> listPrenom = new List<string>();
-        static Random rand = new Random();
+        static public Random rand = new Random();
 
 
 
@@ -60,7 +60,6 @@ namespace ElRestorantant
             int indexNom = rand.Next(listNom.Count);
             int indexPrenom = rand.Next(listPrenom.Count);
             string nom = listPrenom[indexPrenom] + " " + listNom[indexNom];
-            Console.WriteLine(nom);
             return nom;
         }
 

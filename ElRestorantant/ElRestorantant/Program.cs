@@ -66,6 +66,7 @@ namespace ElRestorantant
                                               ████▒▒▓▓▓▓▓▓▓▓░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓██                                                                                                                                                                                                            
             ");
             InitialiserNom();
+            InitialiserIngredient();
             Console.WriteLine("Chef d'oeuvre créés par Emil Néron et Nathan Savard");
             Centre test = new Centre();
             Console.ReadKey();
@@ -83,5 +84,11 @@ namespace ElRestorantant
                 Console.WriteLine("Erreur survenue lors de la Lecture" + ex.Message);
             }
         }
+        static public void InitialiserIngredient()
+        {
+            List<ingredients> listIngredientDispo = new List<ingredients>();
+            listIngredientDispo = JsonFileLoader.ChargerFicher<List<ingredients>>("json_ingredient.json");
+        }
+
     }
 }

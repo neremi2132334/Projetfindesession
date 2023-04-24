@@ -12,14 +12,16 @@ namespace ElRestorantant
         public int Monnaie { get; set; }
         public int NbVente { get; set; }
         public int Popularité { get; set;}
+        public List<Client> lstClient { get; set; }
 
 
         public Restaurant(string nom)
         {
             Nom = nom;
-            Monnaie = random.Next(2000, 5001);
+            Monnaie = FabriqueNom.rand.Next(2000, 5001);
             NbVente = 0;
-            Popularité = 0; 
+            Popularité = 1; 
+            lstClient = new List<Client>();
         }
 
 
@@ -32,13 +34,30 @@ namespace ElRestorantant
                    $"Popularité --> {Popularité}\n");
         }
 
-        public void Clientss()
+        public void ObtenirClient()
         {
-            Client clients = new Client();
+            int moy = (Popularité * 30)/2;
+            int rdm = FabriqueNom.rand.Next(2, moy);
+            int nbClient = 0;
+            for (int i = 0; i < rdm; i++)
+            {
+                Client client = new Client();
+                lstClient.Add(client);
+                nbClient = i;
+            }
+            Console.WriteLine($"Vous Avez {nbClient + 1} client(e)s aujourd'hui ! Voici la liste des clients :\n");
+            AfficherClient(lstClient);
+        }
+        public void AfficherClient(List<Client> lstClient)
+        {
+            foreach(Client client in lstClient)
+            {
+                Console.WriteLine($"Voici le nom du Client --> {client.Nom}");
+                Console.WriteLine($"Voici l'humeur du Client -> {client.HumeurClient}\n");
+                //Console.WriteLine($"Voici sa facture --> {facture}");
+            }
         }
 
 
-        //Fonction qui sert a Random 
-        static readonly Random random = new Random();
     }
 }
