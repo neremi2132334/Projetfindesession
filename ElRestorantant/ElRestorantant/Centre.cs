@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using Console = Colorful.Console;
 
 namespace ElRestorantant
 {
@@ -25,16 +27,18 @@ namespace ElRestorantant
                 Console.WriteLine("1 --> Stats Du Restaurant\n"+
                     "2 --> Gestion des Clients\n" +
                     "3 --> Ajuster les plats\n" +
-                    "4 --> Achat de Nouveau Plat\n");
+                    "4 --> Achat de Nouveau Plat\n" +
+                    "5 --> Engager Employer\n");
                 int chx = Convert.ToInt32(Console.ReadLine());
                 //CONFIRMATION DU CHOIX
-                while ((chx > 3) || (chx < 0))
+                while ((chx > 5) || (chx < 0))
                 {
-                    Console.WriteLine("--> Tapez un chiffre pour faire une action (1,2,3 OU 4)");
+                    Console.WriteLine("--> Tapez un chiffre pour faire une action (1,2,3,4 OU 5)");
                     chx = Convert.ToInt32(Console.ReadLine());
                 }
                 if (chx == 1) { resto.RestoStats(); }
                 if (chx == 2) { resto.ObtenirClient(); }
+                if (chx == 5) { resto.Monnaie = resto.EngagerEmp(); }
             }
         }
     }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using Console = Colorful.Console;
 
 namespace ElRestorantant
 {
@@ -13,6 +15,7 @@ namespace ElRestorantant
         public int NbVente { get; set; }
         public int Popularité { get; set;}
         public List<Client> lstClient { get; set; }
+        public List <Employer> lstEmp { get; set; }
 
 
         public Restaurant(string nom)
@@ -22,6 +25,7 @@ namespace ElRestorantant
             NbVente = 0;
             Popularité = 1; 
             lstClient = new List<Client>();
+            lstEmp = new List<Employer> ();
         }
 
 
@@ -34,6 +38,8 @@ namespace ElRestorantant
                    $"Popularité --> {Popularité}\n");
         }
 
+
+        //Partie Client (Affichage + Setting des Clients!) 
         public void ObtenirClient()
         {
             int moy = (Popularité * 30)/2;
@@ -53,11 +59,35 @@ namespace ElRestorantant
             foreach(Client client in lstClient)
             {
                 Console.WriteLine($"Voici le nom du Client --> {client.Nom}");
-                Console.WriteLine($"Voici l'humeur du Client -> {client.HumeurClient}\n");
+                Console.WriteLine($"Voici l'humeur du Client -> {client.HumeurClient}\n", System.Drawing.Color.Green);
                 //Console.WriteLine($"Voici sa facture --> {facture}");
             }
         }
 
+        //Partie Employer 
+        public int EngagerEmp()
+        {
+            List<Employer> lstChaumeur = new List<Employer>();
+            for (int i=0; i < 5; i++)
+            {
+               Employer employer = new Employer();
+                lstChaumeur.Add(employer);
+            }
 
+            foreach (Employer emp in lstChaumeur)
+            {
+                Console.WriteLine($"{emp.Nom} (Bonus : {emp.BonusEmp}, Rareté : {emp.RareteEmp}, Prix : {emp.Prix}$)");
+            }
+            Console.WriteLine("Choisissez un Employer en entrant son numéro :");
+            int choix = Convert.ToInt32(Console.ReadLine());
+
+            // Ajout de l'employer choisi à la liste des employés
+            Employer EmpChoisi = lstChaumeur[choix];
+            lstChaumeur.RemoveAt(choix);
+            lstEmp.Add(EmpChoisi);
+            Monnaie = Monnaie - EmpChoisi.Prix;
+            return Monnaie;
+
+        }
     }
 }

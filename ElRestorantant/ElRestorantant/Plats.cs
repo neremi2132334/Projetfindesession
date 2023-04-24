@@ -8,9 +8,6 @@ namespace ElRestorantant
 {
     class Plats
     {
-        
-
-
         public void Acheterplat()
         {
 
