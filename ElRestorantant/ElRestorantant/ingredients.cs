@@ -8,13 +8,13 @@ namespace ElRestorantant
 {
 
 
-    enum Qualite
+    public enum Qualite
     {
         Moyenne,
         Bonne,
         Excellente,
     }
-    class ingredients
+    public class ingredients
     {
 
         public string Nom { get; set; }
